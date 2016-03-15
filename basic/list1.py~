@@ -27,7 +27,6 @@ def match_ends(words):
             count = count + 1
     return count
 
-
 # B. front_x
 # Given a list of strings, return a list with the strings
 # in sorted order, except group all the strings that begin with 'x' first.
@@ -36,9 +35,7 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    new = []
     count = 0
-    new.append(words[0])
     for string in range(len(words)):
         for s in range(string,len(words),1):
             if words[string] > words[s]:
@@ -48,11 +45,9 @@ def front_x(words):
     for strn in range(len(words)):
         if words[strn][0] == 'x':
             words.insert(count,words[strn])
-            del words[strn+1]
+            del words[strn]
             count = count+1
     return words
-
-
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
@@ -61,13 +56,6 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-    for t in range(len(tuples)):
-        for s in range(t,len(tuples),1):
-            if tuples[t][1] > tuples[s][1]:
-                tp = tuples[s]
-                tuples[s] = tuples[t]
-                tuples[t] = tp
-    return tuples
 
 
 # Simple provided test() function used in main() to print
